@@ -64,8 +64,8 @@ function __after_startvps($vps) {
     if (isset($ips) && !empty($ips)) {
         foreach ($ips as $ip) {
             $ip_subnet = ipv6_to_subnet($ip['ip'], (int)$ip['ipr_netmask']);
-            exec('ip -6 route add ' . escapeshellarg($ip['ip'] . '/128') . ' dev viifbr0');
-            exec('ip -6 route add '  . escapeshellarg($ip_subnet) . ' via ' . escapeshellarg($ip['ip']) . ' dev viifbr0');
+            exec('ip -6 route replace ' . escapeshellarg($ip['ip'] . '/128') . ' dev viifbr0');
+            exec('ip -6 route replace '  . escapeshellarg($ip_subnet) . ' via ' . escapeshellarg($ip['ip']) . ' dev viifbr0');
         };
     };
 }
