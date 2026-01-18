@@ -31,3 +31,11 @@ Virtualizor is a registered trademark of Softaculous Ltd.
 - It also assumes that a bridge exists and that its interface name is `viifbr0` (the default for Virtualizor). The script will **not work in NAT mode**.
 - This script was developed specifically for our infrastructure. We **cannot guarantee** that it will function correctly on other setups.
 - This software is provided **as-is**, without any support. We will not assist with installation or troubleshooting. If you encounter issues, you are welcome to submit a pull request (PR) while keeping the original functionality intact.
+
+### Requirements
+
+Per [@yoursunny recomendations](https://lowendtalk.com/discussion/comment/4716948/#Comment_4716948):
+> We can deduce these requirements on the router at the previous hop:
+> - If you do not need live migration, the large subnet that contains all customer subnets shall be routed to the on-link address of the physical server.
+> - If you want live migration, each customer VM subnet must be individually routed to the VM's on-link address.
+> - It will not work at all, if the physical machine itself only receives on-link subnet.
