@@ -1,7 +1,6 @@
 # Virtualizor IPv6 Routing Hook
 
 **Copyright** 2026 3K33 sp. z o.o. d/b/a Strike.bz
-**License:** MIT [https://opensource.org/license/mit](https://opensource.org/license/mit)
 
 ## Description
 
